@@ -243,9 +243,10 @@ public class BookManagement {
         System.out.println("Mời bạn nhập mã sản phẩm cần xóa: ");
         String ma = sc.nextLine();
         for (Product product : products) {
-            if (product.getProductId() == ma) {
-                catalogList.remove(product);
-                break;
+            if (product.getProductId().equals(ma)) {
+                products.remove(product);
+                System.out.println("Sản phẩm đã được xóa.");
+                return;
             }
         }
         System.out.println("Không tìm thấy sản phẩm với mã " + ma + " trong danh sách.");
